@@ -3,7 +3,7 @@ library(iGC)
 rm(list = ls())
 
 # load data
-load("/home/anita/Benchmarking/two_omics/PancreaticCancerCompleteDataAnalysis/PancreaticCancerRawDataset.Rdata")
+load("PancreaticCancerRawDataset.Rdata")
 rm(paad.me)
 
 paad.cnv[paad.cnv==2] <- 1
@@ -42,7 +42,6 @@ toc()
 # iGC: 15.766 sec elapsed
 
 # saving results
-setwd("/home/anita/Benchmarking/two_omics/PancreaticCancerCompleteDataAnalysis/iGC/")
 write.table(cna_driven_genes$gain_driven, file = "iGC_PAAD_GainDriven_genes.tsv", sep = "\t", quote = F,row.names = F )
 write.table(cna_driven_genes$loss_driven, file = "iGC_PAAD_LossDriven_genes.tsv", sep = "\t", quote = F,row.names = F )
 write.table(cna_driven_genes$both, file = "iGC_PAAD_BothDriven_genes.tsv", sep = "\t", quote = F,row.names = F )
