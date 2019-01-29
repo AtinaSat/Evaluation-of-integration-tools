@@ -8,7 +8,7 @@ library(tictoc)
 rm(list=ls())
 
 # load data
-load("/home/anita/Benchmarking/two_omics/PancreaticCancerCompleteDataAnalysis/PancreaticCancerRawDataset.Rdata")
+load("PancreaticCancerRawDataset.Rdata")
 rm(paad.cnv)
 
 METPaad <- as.matrix(paad.me)
@@ -46,5 +46,4 @@ resdf <- resdf[1:3000,]
 genes <- as.character(resdf$MethylMixFunctionalGenes)
 
 # saving results
-setwd("/home/anita/Benchmarking/two_omics/PancreaticCancerCompleteDataAnalysis/MethylMix/")
-write.table(genes, "MethylMix_CompPAAD_3000Genes.txt", quote = F, row.names = F)
+write.table(genes, "MethylMix_PAAD_3000Genes.txt", quote = F, row.names = F)
