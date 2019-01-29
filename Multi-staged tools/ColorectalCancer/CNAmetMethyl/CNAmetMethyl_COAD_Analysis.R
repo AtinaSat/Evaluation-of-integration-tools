@@ -3,7 +3,7 @@ library(CNAmet)
 library(tictoc)
 rm(list=ls())
 
-load("/home/anita/Benchmarking/two_omics/ColonCancerCompleteDataAnalysis/ColonCancerRawDataset.Rdata")
+load("../ColorectalCancerRawDataset.Rdata")
 
 ## binning the methylation values into 3 bins (hypo, normal, and hyper)
 me.exp.binned <- coad.me
@@ -62,7 +62,6 @@ hypoResults$Gene <- rownames(hypoResults)
 hyperResults$Gene <- rownames(hyperResults)
 
 # saving results
-setwd("/home/anita/Benchmarking/two_omics/ColonCancerCompleteDataAnalysis/CNAmetMethyl/")
-write.table(hypoResults, file = "CNAmetMethyl_CompCOAD_HypoDriven_Genes.tsv", row.names = F, sep = "\t", quote = F)
-write.table(hyperResults, file = "CNAmetMethyl_CompCOAD_HyperDriven_Genes.tsv", row.names = F, sep = "\t", quote = F)
+write.table(hypoResults, file = "CNAmetMethyl_COAD_HypoDriven_Genes.tsv", row.names = F, sep = "\t", quote = F)
+write.table(hyperResults, file = "CNAmetMethyl_COAD_HyperDriven_Genes.tsv", row.names = F, sep = "\t", quote = F)
 
