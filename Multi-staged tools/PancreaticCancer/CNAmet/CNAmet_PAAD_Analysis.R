@@ -52,8 +52,8 @@ delResults$Gene <- rownames(delResults)
 
 # saving results
 setwd("/home/anita/Benchmarking/two_omics/PancreaticCancerCompleteDataAnalysis/CNAmet/")
-write.table(ampResults, file = "CNAmet_CompPAAD_GainDriven_Genes.tsv", row.names = F, sep = "\t", quote = F)
-write.table(delResults, file = "CNAmet_CompPAAD_LossDriven_Genes.tsv", row.names = F, sep = "\t", quote = F)
+write.table(ampResults, file = "CNAmet_PAAD_GainDriven_Genes.tsv", row.names = F, sep = "\t", quote = F)
+write.table(delResults, file = "CNAmet_PAAD_LossDriven_Genes.tsv", row.names = F, sep = "\t", quote = F)
 
 
 
