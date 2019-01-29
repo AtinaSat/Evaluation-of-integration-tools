@@ -1,4 +1,4 @@
-## Creating colon cancer dataset
+## Creating colorectal cancer dataset
 rm(list=ls())
 library(caret)
 ### reading copy number values and seperating them into amplification and deletion calls
