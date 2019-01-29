@@ -35,7 +35,7 @@ CNAmetBoth <- intersect(as.character(CNAmetAmpSelected$Gene), as.character(CNAme
 CNAmetTotal <- unique(c(as.character(CNAmetAmpSelected$Gene), as.character(CNAmetDelSelected$Gene)))
 
 # save genes
-# write.table(CNAmetTotal, file = "CNAmet/CNAmet_PAAD_3000Genes.txt", row.names = F, quote = F, sep = "\t")
+write.table(CNAmetTotal, file = "CNAmet/CNAmet_PAAD_3000Genes.txt", row.names = F, quote = F, sep = "\t")
 
 ####################################################################################################################
 ## iGC
@@ -86,7 +86,7 @@ plrsSelected <- plrsGenes[1:3000,]
 plrsTotal <- as.character(plrsSelected$Gene)
 
 # save genes
-write.table(plrsTotal, file = "PancreaticCancer/PLRS/PLRS_CompPAAD_3000Genes.txt", row.names = F, quote = F, sep = "\t")
+write.table(plrsTotal, file = "PancreaticCancer/PLRS/PLRS_PAAD_3000Genes.txt", row.names = F, quote = F, sep = "\t")
 
 ####################################################################################################################
 ## Oncodrive-CIS
@@ -144,7 +144,7 @@ venn(list(CNAmet = CNAmetTotal,  iGC = iGCTotal,  PLRS = plrsTotal,
      zcolor = "style", cexil = 1.5, cexsn = 1.5, opacity = 0.3,size = 20)
 
 ## Save the venn plot
-setwd("PancreaticCancer/Genelevel_Comprison")
+setwd("PancreaticCancer/Genelevel_Comparison")
 jpeg("PAAD_3000GenesVenn.jpg", width = 1260, height = 890)  
 venn(list(CNAmet = CNAmetTotal,  iGC = iGCTotal,  PLRS = plrsTotal,
           OncodriveCIS = OncoTotal,
