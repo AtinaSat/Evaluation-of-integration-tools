@@ -16,25 +16,25 @@ cancerBP <- cancerBP[cancerBP$FDR<0.05,]
 cancerBP <- as.character(cancerBP$Term)
 
 # CNAmet genes BP terms
-CNAmetBP <- read.delim("CNAmet/DAVID/CNAmet_PAAD_3000Genes_GOTERM_BP_FAT.txt",
+CNAmetBP <- read.delim("PancreaticCancer/CNAmet/DAVID/CNAmet_PAAD_3000Genes_GOTERM_BP_FAT.txt",
                        header = T, sep = "\t")
 CNAmetBP <- CNAmetBP[CNAmetBP$FDR<0.05,]
 CNAmetBP <- as.character(CNAmetBP$Term)
 
 #iGC genes BP terms
-iGCBP <- read.delim("iGC/DAVID/iGC_PAAD_3000Genes_GOTERM_BP_FAT.txt",
+iGCBP <- read.delim("PancreaticCancer/iGC/DAVID/iGC_PAAD_3000Genes_GOTERM_BP_FAT.txt",
                     header = T, sep = "\t")
 iGCBP <- iGCBP[iGCBP$FDR<0.05,]
 iGCBP <- as.character(iGCBP$Term)
 
 # PLRS genes BP terms
-plrsBP <- read.delim("PLRS/DAVID/PLRS_PAAD_3000Genes_GOTERM_BP_FAT.txt",
+plrsBP <- read.delim("PancreaticCancer/PLRS/DAVID/PLRS_PAAD_3000Genes_GOTERM_BP_FAT.txt",
                      header = T, sep = "\t")
 plrsBP <- plrsBP[plrsBP$FDR<0.05,]
 plrsBP <- as.character(plrsBP$Term)
 
 # Oncodrive-CIS genes BP terms
-OncoBP <- read.delim("OncodriveCIS/DAVID/Oncodrive_PAAD_3000Genes_GOTERM_BP_FAT.txt",
+OncoBP <- read.delim("PancreaticCancer/OncodriveCIS/DAVID/Oncodrive_PAAD_3000Genes_GOTERM_BP_FAT.txt",
                      header = T, sep = "\t")
 OncoBP <- OncoBP[OncoBP$FDR<0.05,]
 OncoBP <- as.character(OncoBP$Term)
@@ -63,25 +63,25 @@ cancerCC <- cancerCC[cancerCC$FDR<0.05,]
 cancerCC <- as.character(cancerCC$Term)
 
 # CNAmet
-CNAmetCC <- read.delim("CNAmet/DAVID/CNAmet_PAAD_3000Genes_GOTERM_CC_FAT.txt",
+CNAmetCC <- read.delim("PancreaticCancer/CNAmet/DAVID/CNAmet_PAAD_3000Genes_GOTERM_CC_FAT.txt",
                        header = T, sep = "\t")
 CNAmetCC <- CNAmetCC[CNAmetCC$FDR<0.05,]
 CNAmetCC <- as.character(CNAmetCC$Term)
 
 #iGC
-iGCCC <- read.delim("iGC/DAVID/iGC_PAAD_3000Genes_GOTERM_CC_FAT.txt",
+iGCCC <- read.delim("PancreaticCancer/iGC/DAVID/iGC_PAAD_3000Genes_GOTERM_CC_FAT.txt",
                     header = T, sep = "\t")
 iGCCC <- iGCCC[iGCCC$FDR<0.05,]
 iGCCC <- as.character(iGCCC$Term)
 
 # PLRS
-plrsCC <- read.delim("PLRS/DAVID/PLRS_PAAD_3000Genes_GOTERM_CC_FAT.txt",
+plrsCC <- read.delim("PancreaticCancer/PLRS/DAVID/PLRS_PAAD_3000Genes_GOTERM_CC_FAT.txt",
                      header = T, sep = "\t")
 plrsCC <- plrsCC[plrsCC$FDR<0.05,]
 plrsCC <- as.character(plrsCC$Term)
 
 # Oncodrive-CIS
-OncoCC <- read.delim("OncodriveCIS/DAVID/Oncodrive_PAAD_3000Genes_GOTERM_CC_FAT.txt",
+OncoCC <- read.delim("PancreaticCancer/OncodriveCIS/DAVID/Oncodrive_PAAD_3000Genes_GOTERM_CC_FAT.txt",
                      header = T, sep = "\t")
 OncoCC <- OncoCC[OncoCC$FDR<0.05,]
 OncoCC <- as.character(OncoCC$Term)
@@ -110,25 +110,25 @@ cancerMF <- cancerMF[cancerMF$FDR<0.05,]
 cancerMF <- as.character(cancerMF$Term)
 
 # CNAmet
-CNAmetMF <- read.delim("CNAmet/DAVID/CNAmet_PAAD_3000Genes_GOTERM_MF_FAT.txt",
+CNAmetMF <- read.delim("PancreaticCancer/CNAmet/DAVID/CNAmet_PAAD_3000Genes_GOTERM_MF_FAT.txt",
                        header = T, sep = "\t")
 CNAmetMF <- CNAmetMF[CNAmetMF$FDR<0.05,]
 CNAmetMF <- as.character(CNAmetMF$Term)
 
 # iGC
-iGCMF <- read.delim("iGC/DAVID/iGC_PAAD_3000Genes_GOTERM_MF_FAT.txt",
+iGCMF <- read.delim("PancreaticCancer/iGC/DAVID/iGC_PAAD_3000Genes_GOTERM_MF_FAT.txt",
                     header = T, sep = "\t")
 iGCMF <- iGCMF[iGCMF$FDR<0.05,]
 iGCMF <- as.character(iGCMF$Term)
 
 # PLRS
-plrsMF <- read.delim("PLRS/DAVID/PLRS_PAAD_3000Genes_GOTERM_MF_FAT.txt",
+plrsMF <- read.delim("PancreaticCancer/PLRS/DAVID/PLRS_PAAD_3000Genes_GOTERM_MF_FAT.txt",
                      header = T, sep = "\t")
 plrsMF <- plrsMF[plrsMF$FDR<0.05,]
 plrsMF <- as.character(plrsMF$Term)
 
 # Oncodrive-CIS
-OncoMF <- read.delim("OncodriveCIS/DAVID/Oncodrive_CompPAAD_3000Genes_GOTERM_MF_FAT.txt",
+OncoMF <- read.delim("PancreaticCancer/OncodriveCIS/DAVID/Oncodrive_CompPAAD_3000Genes_GOTERM_MF_FAT.txt",
                      header = T, sep = "\t")
 OncoMF <- OncoMF[OncoMF$FDR<0.05,]
 OncoMF <- as.character(OncoMF$Term)
@@ -159,25 +159,25 @@ cancerPathway <- cancerPathway[cancerPathway$Entities.FDR<0.05,]
 cancerPathway <- as.character(cancerPathway$Pathway.identifier)
 
 # CNAmet
-CNAmetPathway <- read.delim("CNAmet/DAVID/CNAmet_PAAD_3000Genes_Reactome_Pathway.csv",
+CNAmetPathway <- read.delim("PancreaticCancer/CNAmet/DAVID/CNAmet_PAAD_3000Genes_Reactome_Pathway.csv",
                             header = T, sep = ",")
 CNAmetPathway <- CNAmetPathway[CNAmetPathway$Entities.FDR<0.05,]
 CNAmetPathway <- as.character(CNAmetPathway$Pathway.identifier)
 
 # iGC
-iGCPathway <- read.delim("iGC/DAVID/iGC_PAAD_3000Genes_Reactome_Pathway.csv",
+iGCPathway <- read.delim("PancreaticCancer/iGC/DAVID/iGC_PAAD_3000Genes_Reactome_Pathway.csv",
                          header = T, sep = ",")
 iGCPathway <- iGCPathway[iGCPathway$Entities.FDR<0.05,]
 iGCPathway <- as.character(iGCPathway$Pathway.identifier)
 
 # PLRS
-plrsPathway <- read.delim("PLRS/DAVID/PLRS_PAAD_3000Genes_Reactome_Pathway.csv",
+plrsPathway <- read.delim("PancreaticCancer/PLRS/DAVID/PLRS_PAAD_3000Genes_Reactome_Pathway.csv",
                           header = T, sep = ",")
 plrsPathway <- plrsPathway[plrsPathway$Entities.FDR<0.05,]
 plrsPathway <- as.character(plrsPathway$Pathway.identifier)
 
 # Oncodrive-CIS
-OncoPathway <- read.delim("OncodriveCIS/DAVID/Oncodrive_PAAD_3000Genes_Reactome_Pathway.csv",
+OncoPathway <- read.delim("PancreaticCancer/OncodriveCIS/DAVID/Oncodrive_PAAD_3000Genes_Reactome_Pathway.csv",
                           header = T, sep = ",")
 OncoPathway <- OncoPathway[OncoPathway$Entities.FDR<0.05,]
 OncoPathway <- as.character(OncoPathway$Pathway.identifier)
