@@ -12,7 +12,7 @@ rm(list=ls())
 # hence, perform fdr correction and select top 1500 amplification driven and top 1500 deletion driven genes based on fdr
 
 # amplification driven genes
-CNAmetAmp <- read.delim("/home/anita/Benchmarking/two_omics/ColonCancerCompleteDataAnalysis/CNAmet/CNAmet_CompCOAD_GainDriven_Genes.tsv",
+CNAmetAmp <- read.delim("ColorectalCancer/CNAmet/CNAmet_COAD_GainDriven_Genes.tsv",
                         header = T, sep = "\t")
 CNAmetAmp <- CNAmetAmp[,c(3,4,10)]
 CNAmetAmp <- na.omit(CNAmetAmp)
@@ -22,7 +22,7 @@ CNAmetAmp <- CNAmetAmp[order(CNAmetAmp$p.adj.fdr),]
 CNAmetAmpSelected <- CNAmetAmp[1:1500,]
 
 # deletion driven genes
-CNAmetDel <- read.delim("/home/anita/Benchmarking/two_omics/ColonCancerCompleteDataAnalysis/CNAmet/CNAmet_CompCOAD_LossDriven_Genes.tsv",
+CNAmetDel <- read.delim("ColorectalCancer/CNAmet/CNAmet_COAD_LossDriven_Genes.tsv",
                         header = T, sep = "\t")
 CNAmetDel <- CNAmetDel[,c(3,4,10)]
 CNAmetDel <- na.omit(CNAmetDel)
@@ -38,8 +38,7 @@ CNAmetBoth <- intersect(as.character(CNAmetAmpSelected$Gene), as.character(CNAme
 CNAmetTotal <- unique(c(as.character(CNAmetAmpSelected$Gene), as.character(CNAmetDelSelected$Gene)))
 
 # save genes
-write.table(CNAmetTotal, file = "/home/anita/Benchmarking/two_omics/ColonCancerCompleteDataAnalysis/CNAmet/CNAmet_CompCOAD_3000Genes.txt",
-            row.names = F, quote = F, sep = "\t")
+write.table(CNAmetTotal, file = "ColorectalCancer/CNAmet/CNAmet_COAD_3000Genes.txt",row.names = F, quote = F, sep = "\t")
 
 ####################################################################################################################
 
@@ -47,20 +46,20 @@ write.table(CNAmetTotal, file = "/home/anita/Benchmarking/two_omics/ColonCancerC
 # read the results and select top 1500 amplification driven and 1500 deletion driven genes based on fdr
 
 # amplification driven genes
-iGCAmp <- read.delim("/home/anita/Benchmarking/two_omics/ColonCancerCompleteDataAnalysis/iGC/CNA_GainDriven_genes.tsv",
+iGCAmp <- read.delim("ColorectalCancer/iGC/iGC_COAD_GainDriven_genes.tsv",
                      header = T, sep = "\t")
 iGCAmp <- iGCAmp[,c(1,3)]
 iGCAmp <- iGCAmp[iGCAmp$fdr<0.05,]
 
 
 # deletion driven genes
-iGCDel <- read.delim("/home/anita/Benchmarking/two_omics/ColonCancerCompleteDataAnalysis/iGC/CNA_LossDriven_genes.tsv",
+iGCDel <- read.delim("ColorectalCancer/iGC/iGC_COAD_LossDriven_genes.tsv",
                      header = T, sep = "\t")
 iGCDel <- iGCDel[,c(1,3)]
 iGCDel <- iGCDel[iGCDel$fdr<0.05,]
 
 # Both genes
-iGCBoth <- read.delim("/home/anita/Benchmarking/two_omics/ColonCancerCompleteDataAnalysis/iGC/CNA_BothDriven_genes.tsv",
+iGCBoth <- read.delim("ColorectalCancer/iGC/iGC_COAD_BothDriven_genes.tsv",
                       header = T, sep = "\t")
 iGCBothAmp <- iGCBoth[(iGCBoth$gain_fdr<0.05),]
 iGCBothAmp <- iGCBothAmp[,c(1,3)]
@@ -83,14 +82,14 @@ iGCBoth <- intersect(as.character(iGCAmpSelected$GENE), as.character(iGCDelSelec
 iGCTotal <- unique(c(as.character(iGCAmpSelected$GENE), as.character(iGCDelSelected$GENE)))
 
 # save genes
-write.table(iGCTotal, file = "/home/anita/Benchmarking/two_omics/ColonCancerCompleteDataAnalysis/iGC/iGC_CompCOAD_3000Genes.txt",
+write.table(iGCTotal, file = "ColorectalCancer/iGC/iGC_COAD_3000Genes.txt",
             row.names = F, quote = F, sep = "\t")
 
 ####################################################################################################################
 ## plrs
 # plrs does not output amplfied and deletion driven genes. Hence selected top 3000 genes from results based on fdr
 
-plrsGenes <- read.delim("/home/anita/Benchmarking/two_omics/ColonCancerCompleteDataAnalysis/plrs/PLRS_COAD_Results.tsv",
+plrsGenes <- read.delim("ColorectalCancer/PLRS/PLRS_COAD_Results.tsv",
                         header = T, sep = "\t")
 plrsSelected <- plrsGenes[plrsGenes$BH.adj.pval<0.05,] 
 plrsGenes <- plrsGenes[order(plrsGenes$BH.adj.pval),]
@@ -98,7 +97,7 @@ plrsSelected <- plrsGenes[1:3000,]
 plrsTotal <- as.character(plrsSelected$Gene)
 
 # save genes
-write.table(plrsTotal, file = "/home/anita/Benchmarking/two_omics/ColonCancerCompleteDataAnalysis/plrs/PLRS_CompCOAD_3000Genes.txt",
+write.table(plrsTotal, file = "ColorectalCancer/PLRS/PLRS_COAD_3000Genes.txt",
             row.names = F, quote = F, sep = "\t")
 
 ####################################################################################################################
@@ -107,7 +106,7 @@ write.table(plrsTotal, file = "/home/anita/Benchmarking/two_omics/ColonCancerCom
 # select top 1500 amplification driven and 1500 deletion driven gene based on fdr
 
 # amplification driven genes
-OncoAmp <- read.delim("/home/anita/Benchmarking/two_omics/ColonCancerCompleteDataAnalysis/OncodriveCIS/CompCOAD.Output/OncoCNA.AMP",
+OncoAmp <- read.delim("ColorectalCancer/OncodriveCIS/OncoCNA.AMP",
                       header = T, sep = "\t")
 OncoAmp$pval <- pnorm(-abs(OncoAmp$Z.COMBINED))
 OncoAmp$p.adj.fdr <- p.adjust(OncoAmp$pval, method = "fdr")
@@ -117,7 +116,7 @@ OncoAmp <- OncoAmp[order(OncoAmp$p.adj.fdr),]
 OncoAmpSelected <- OncoAmp[1:1500,]
 
 # deletion driven genes
-OncoDel <- read.delim("/home/anita/Benchmarking/two_omics/ColonCancerCompleteDataAnalysis/OncodriveCIS/CompCOAD.Output/OncoCNA.DEL",
+OncoDel <- read.delim("ColorectalCancer/OncodriveCIS/OncoCNA.DEL",
                       header = T, sep = "\t")
 head(OncoDel)
 tail(OncoDel)
@@ -135,7 +134,7 @@ OncoBoth <- intersect(as.character(OncoAmpSelected$ENS.ID), as.character(OncoDel
 OncoTotal <- unique(c(as.character(OncoAmpSelected$ENS.ID), as.character(OncoDelSelected$ENS.ID)))
 
 # save genes
-write.table(OncoTotal, file = "/home/anita/Benchmarking/two_omics/ColonCancerCompleteDataAnalysis/OncodriveCIS/Oncodrive_CompCOAD_3000Genes.txt",
+write.table(OncoTotal, file = "ColorectalCancer/OncodriveCIS/Oncodrive_COAD_3000Genes.txt",
             row.names = F, quote = F, sep = "\t")
 
 ####################################################################################################################
@@ -144,7 +143,7 @@ write.table(OncoTotal, file = "/home/anita/Benchmarking/two_omics/ColonCancerCom
 
 library(readr)
 # reading the text file
-mystring <- read_file("/home/anita/Benchmarking/two_omics/ColonCancerCompleteDataAnalysis/Venns/cBioPortalCancerGeneList.txt")
+mystring <- read_file("cBioPortalCancerGeneList.txt")
 cancergenes <- strsplit(mystring, "\n", fixed = FALSE, perl = FALSE, useBytes = FALSE)[[1]]
 
 # finding common genes between tools and cancer gene list
@@ -162,7 +161,6 @@ venn(list(CNAmet = CNAmetTotal,  iGC = iGCTotal,  PLRS = plrsTotal,
 
 
 ## Save the venn plot
-setwd("/home/anita/Benchmarking/two_omics/ColonCancerCompleteDataAnalysis/Venns/")
 jpeg("COAD_3000GenesVenn.jpg", width = 1260, height = 890)  
 venn(list(CNAmet = CNAmetTotal,  iGC = iGCTotal,  PLRS = plrsTotal,
           OncodriveCIS = OncoTotal,
