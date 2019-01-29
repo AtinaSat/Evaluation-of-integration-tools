@@ -1,20 +1,20 @@
 ## Creating colorectal cancer dataset
 rm(list=ls())
 library(caret)
-### reading copy number values and seperating them into amplification and deletion calls
-cn <- read.table(gzfile("/home/anita/Integrated analysis in R/All_Cancers/COAD_Gistic2_CopyNumber_Gistic2_all_thresholded.by_genes.gz"), header = T, sep = "\t")
+### reading thresholded copy number downloaded from UCSC Xena browser 
+cn <- read.table(gzfile("COAD_Gistic2_CopyNumber_Gistic2_all_thresholded.by_genes.gz"), header = T, sep = "\t")
 cn[1:5,1:5]
 rownames(cn) <- cn[,1]
 cn <- cn[,-1]
 
-### reading gene expression file
-ge.exp <- read.table(gzfile("/home/anita/Integrated analysis in R/All_Cancers/COAD_HiSeqV2.gz"), header = T, sep = "\t")
+### reading gene expression file downloaded from UCSC Xena browser
+ge.exp <- read.table(gzfile("COAD_HiSeqV2.gz"), header = T, sep = "\t")
 ge.exp[1:5,1:5]
 rownames(ge.exp) <- ge.exp[,1]
 ge.exp <- ge.exp[,-1]
 
-### reading methylation data
-me.exp <- read.table("/home/anita/Integrated analysis in R/All_Cancers/COAD.meth.by_mean.data.txt", header = T, sep = "\t")
+### reading methylation data downloaded from firebrowse
+me.exp <- read.table("COAD.meth.by_mean.data.txt", header = T, sep = "\t")
 me.exp[1:5,1:5]
 me.exp <- me.exp[-1,]
 rownames(me.exp) <- me.exp[,1]
@@ -58,5 +58,5 @@ all(rownames(coad.cnv) == rownames(coad.me))
 all(colnames(coad.ge) == colnames(coad.cnv))
 all(colnames(coad.cnv) == colnames(coad.me))
 
-setwd("/home/anita/Benchmarking/two_omics/ColonCancerCompleteDataAnalysis/")
-save(file = "ColonCancerRawDataset.Rdata", coad.ge, coad.cnv, coad.me)
+# saving the data
+save(file = "ColorectalCancerRawDataset.Rdata", coad.ge, coad.cnv, coad.me)
