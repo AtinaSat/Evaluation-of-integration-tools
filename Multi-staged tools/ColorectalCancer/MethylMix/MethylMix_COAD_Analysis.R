@@ -7,7 +7,7 @@ library(tictoc)
 rm(list = ls())
 
 # load data
-load("/home/anita/Benchmarking/two_omics/ColonCancerCompleteDataAnalysis/ColonCancerRawDataset.Rdata")
+load("../ColorectalCancerRawDataset.Rdata")
 rm(coad.cnv)
 
 METCoad <- as.matrix(coad.me)
@@ -30,5 +30,4 @@ stopCluster(cl)
 # MethylMix: 17.785 sec elapsed
 
 # saving the results
-setwd("/home/anita/Benchmarking/two_omics/ColonCancerCompleteDataAnalysis/MethylMix/")
-write.table(MethylMixFunctionalGenes, "MethylMix_CompCOAD_3000Genes.txt", quote = F, row.names = F)
+write.table(MethylMixFunctionalGenes, "MethylMix_COAD_3000Genes.txt", quote = F, row.names = F)
