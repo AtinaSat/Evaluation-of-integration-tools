@@ -4,7 +4,7 @@ library(tictoc)
 rm(list=ls())
 
 # load data
-load("/home/anita/Benchmarking/two_omics/PancreaticCancerCompleteDataAnalysis/PancreaticCancerRawDataset.Rdata")
+load("PancreaticCancerRawDataset.Rdata")
 rm(paad.me)
 
 ### reading copy number values and creating two binary matrices for amplification and deletion calls
@@ -51,7 +51,6 @@ ampResults$Gene <- rownames(ampResults)
 delResults$Gene <- rownames(delResults)
 
 # saving results
-setwd("/home/anita/Benchmarking/two_omics/PancreaticCancerCompleteDataAnalysis/CNAmet/")
 write.table(ampResults, file = "CNAmet_PAAD_GainDriven_Genes.tsv", row.names = F, sep = "\t", quote = F)
 write.table(delResults, file = "CNAmet_PAAD_LossDriven_Genes.tsv", row.names = F, sep = "\t", quote = F)
 
