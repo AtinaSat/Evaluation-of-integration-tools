@@ -43,6 +43,6 @@ toc()
 
 # saving results
 setwd("/home/anita/Benchmarking/two_omics/PancreaticCancerCompleteDataAnalysis/iGC/")
-write.table(cna_driven_genes$gain_driven, file = "CNA_GainDriven_genes.tsv", sep = "\t", quote = F,row.names = F )
-write.table(cna_driven_genes$loss_driven, file = "CNA_LossDriven_genes.tsv", sep = "\t", quote = F,row.names = F )
-write.table(cna_driven_genes$both, file = "CNA_BothDriven_genes.tsv", sep = "\t", quote = F,row.names = F )
+write.table(cna_driven_genes$gain_driven, file = "iGC_PAAD_GainDriven_genes.tsv", sep = "\t", quote = F,row.names = F )
+write.table(cna_driven_genes$loss_driven, file = "iGC_PAAD_LossDriven_genes.tsv", sep = "\t", quote = F,row.names = F )
+write.table(cna_driven_genes$both, file = "iGC_PAAD_BothDriven_genes.tsv", sep = "\t", quote = F,row.names = F )
