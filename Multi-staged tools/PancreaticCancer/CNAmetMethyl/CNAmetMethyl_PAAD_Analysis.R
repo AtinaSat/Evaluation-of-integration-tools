@@ -1,10 +1,10 @@
-# Analysis if pancreatic cancer dataset using CNAmet - methylation and gene expression integration
+# Analysis of pancreatic cancer dataset using CNAmet - methylation and gene expression integration
 library(CNAmet)
 library(tictoc)
 rm(list=ls())
 
 # load data
-load("/home/anita/Benchmarking/two_omics/PancreaticCancerCompleteDataAnalysis/PancreaticCancerRawDataset.Rdata")
+load("PancreaticCancerRawDataset.Rdata")
 
 ## binning the methylation values into 3 bins (hypo, normal, and hyper)
 me.exp.binned <- paad.me
@@ -61,7 +61,6 @@ hypoResults$Gene <- rownames(hypoResults)
 hyperResults$Gene <- rownames(hyperResults)
 
 # saving results
-setwd("/home/anita/Benchmarking/two_omics/PancreaticCancerCompleteDataAnalysis/CNAmetMethyl/")
 write.table(hypoResults, file = "CNAmetMethyl_CompPAAD_HypoDriven_Genes.tsv", row.names = F, sep = "\t", quote = F)
 write.table(hyperResults, file = "CNAmetMethyl_CompPAAD_HyperDriven_Genes.tsv", row.names = F, sep = "\t", quote = F)
 
