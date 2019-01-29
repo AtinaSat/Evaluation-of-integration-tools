@@ -3,11 +3,11 @@ library(plrs)
 rm(list = ls())
 
 #load data
-load("/home/anita/Benchmarking/two_omics/ColonCancerCompleteDataAnalysis/ColonCancerRawDataset.Rdata")
+load("../ColonrectalCancerRawDataset.Rdata")
 rm(coad.me)
 
 # Reading GISTIC 2.0 copy number data
-cnv_gistic <- read.table(gzfile("/home/anita/Integrated analysis in R/All_Cancers/COAD_Gistic2_CopyNumber_Gistic2_all_data_by_genes.gz"), 
+cnv_gistic <- read.table(gzfile("COAD_Gistic2_CopyNumber_Gistic2_all_data_by_genes.gz"), 
                          header = T, sep = "\t")
 rownames(cnv_gistic) <- cnv_gistic[,1]
 cnv_gistic[,1] <- NULL
@@ -60,7 +60,6 @@ results <- data.frame(resNoSel@test)
 results$Gene <- rownames(coad.ge)
 
 # saving results
-setwd("/home/anita/Benchmarking/two_omics/ColonCancerCompleteDataAnalysis/plrs")
 write.table(results, file = "PLRS_COAD_Results.tsv", row.names = T, sep = "\t", quote = F)
 
 
