@@ -2,11 +2,11 @@
 library(plrs)
 
 # load data
-load("/home/anita/Benchmarking/two_omics/PancreaticCancerCompleteDataAnalysis/PancreaticCancerRawDataset.Rdata")
+load("PancreaticCancerRawDataset.Rdata")
 rm(paad.me)
 
-# Reading GISTIC 2.0 copy number data
-cnv_gistic <- read.table(gzfile("/home/anita/Integrated analysis in R/All_Cancers/PAAD_Gistic2_CopyNumber_Gistic2_all_data_by_genes.gz"), 
+# Reading GISTIC 2.0 copy number data downloaded from UCSC Xena browser
+cnv_gistic <- read.table(gzfile("PAAD_Gistic2_CopyNumber_Gistic2_all_data_by_genes.gz"), 
                          header = T, sep = "\t")
 rownames(cnv_gistic) <- cnv_gistic[,1]
 cnv_gistic[,1] <- NULL
@@ -59,5 +59,4 @@ results <- data.frame(resNoSel@test)
 results$Gene <- rownames(paad.ge)
 
 # saving results
-setwd("/home/anita/Benchmarking/two_omics/PancreaticCancerCompleteDataAnalysis/plrs")
 write.table(results, file = "PLRS_PAAD_Results.tsv", row.names = T, sep = "\t", quote = F)
