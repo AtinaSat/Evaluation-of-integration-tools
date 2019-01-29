@@ -1,7 +1,7 @@
-### Data generation for colon cancer dataset for OncoDrive-CIS analysis
+### Data generation for colorectal cancer dataset for OncoDrive-CIS analysis
 library(reshape2)
 rm(list =ls())
-load("/home/anita/Benchmarking/two_omics/ColonCancerCompleteDataAnalysis/ColonCancerRawDataset.Rdata")
+load("../ColonrectalCancerRawDataset.Rdata")
 rm(coad.me)
 
 ## Gene expression
@@ -35,10 +35,9 @@ sample.table$Code <- 1
 sample.table <- sample.table[-1,]
 head(sample.table)
 
-setwd("/home/anita/Benchmarking/two_omics/ColonCancerCompleteDataAnalysis/OncodriveCIS/")
-write.table(ge.table, file= "GeneExp_CompCOAD.tsv", sep = "\t", row.names = F, quote = F)
-write.table(cnv.table, file = "CNV_CompCOAD.tsv", sep = "\t", row.names = F, quote = F)
-write.table(sample.table, file = "SampleInfo_CompCOAD.tsv", sep = "\t", row.names = F, quote = F)
+write.table(ge.table, file= "GeneExp_COAD.tsv", sep = "\t", row.names = F, quote = F)
+write.table(cnv.table, file = "CNV_COAD.tsv", sep = "\t", row.names = F, quote = F)
+write.table(sample.table, file = "SampleInfo_COAD.tsv", sep = "\t", row.names = F, quote = F)
 
 
 # Please remove column header in CNV and sample file before running Oncodrive-CIS 
