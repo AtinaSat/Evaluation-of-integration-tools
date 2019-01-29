@@ -5,7 +5,7 @@ library(tictoc)
 rm(list=ls())
 
 # load data
-load("/home/anita/Benchmarking/two_omics/ColonCancerCompleteDataAnalysis/ColonCancerRawDataset.Rdata")
+load("ColorectalCancerRawDataset.Rdata")
 rm(coad.me)
 
 ### reading copy number values and creating two binary matrices for amplification and deletion calls
@@ -50,7 +50,6 @@ ampResults$Gene <- rownames(ampResults)
 delResults$Gene <- rownames(delResults)
 
 # saving results
-setwd("/home/anita/Benchmarking/two_omics/ColonCancerCompleteDataAnalysis/CNAmet/")
-write.table(ampResults, file = "CNAmet_CompCOAD_GainDriven_Genes.tsv", row.names = F, sep = "\t", quote = F)
-write.table(delResults, file = "CNAmet_CompCOAD_LossDriven_Genes.tsv", row.names = F, sep = "\t", quote = F)
+write.table(ampResults, file = "CNAmet_COAD_GainDriven_Genes.tsv", row.names = F, sep = "\t", quote = F)
+write.table(delResults, file = "CNAmet_COAD_LossDriven_Genes.tsv", row.names = F, sep = "\t", quote = F)
 
