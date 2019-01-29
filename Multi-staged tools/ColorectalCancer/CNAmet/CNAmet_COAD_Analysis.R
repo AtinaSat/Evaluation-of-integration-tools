@@ -5,7 +5,7 @@ library(tictoc)
 rm(list=ls())
 
 # load data
-load("ColorectalCancerRawDataset.Rdata")
+load("../ColorectalCancerRawDataset.Rdata")
 rm(coad.me)
 
 ### reading copy number values and creating two binary matrices for amplification and deletion calls
