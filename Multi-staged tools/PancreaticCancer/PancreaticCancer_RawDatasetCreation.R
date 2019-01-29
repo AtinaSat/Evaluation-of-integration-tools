@@ -2,20 +2,20 @@
 rm(list=ls())
 library(caret)
 
-### reading copy number values and seperating them into amplification and deletion calls
-cn <- read.table(gzfile("/home/anita/Integrated analysis in R/All_Cancers/PAAD_Gistic2_CopyNumber_Gistic2_all_thresholded.by_genes.gz"), header = T, sep = "\t")
+### reading thresholded copy number values downloaded from UCSC Xena browser
+cn <- read.table(gzfile("PAAD_Gistic2_CopyNumber_Gistic2_all_thresholded.by_genes.gz"), header = T, sep = "\t")
 cn[1:5,1:5]
 rownames(cn) <- cn[,1]
 cn <- cn[,-1]
 
-### reading gene expression file
-ge.exp <- read.table(gzfile("/home/anita/Integrated analysis in R/All_Cancers/PAAD_HiSeqV2.gz"), header = T, sep = "\t")
+### reading gene expression file downloaded from UCSC Xena
+ge.exp <- read.table(gzfile("PAAD_HiSeqV2.gz"), header = T, sep = "\t")
 ge.exp[1:5,1:5]
 rownames(ge.exp) <- ge.exp[,1]
 ge.exp <- ge.exp[,-1]
 
-### reading methylation data
-me.exp <- read.table("/home/anita/Integrated analysis in R/All_Cancers/PAAD.meth.by_mean.data.txt", header = T, sep = "\t")
+### reading methylation data downloaded from firebrowse
+me.exp <- read.table("PAAD.meth.by_mean.data.txt", header = T, sep = "\t")
 me.exp[1:5,1:5]
 me.exp <- me.exp[-1,]
 rownames(me.exp) <- me.exp[,1]
@@ -63,5 +63,5 @@ all(rownames(paad.cnv) == rownames(paad.me))
 all(colnames(paad.ge) == colnames(paad.cnv))
 all(colnames(paad.cnv) == colnames(paad.me))
 
-setwd("/home/anita/Benchmarking/two_omics/PancreaticCancerCompleteDataAnalysis/")
+# save the dataset
 save(file = "PancreaticCancerRawDataset.Rdata", paad.ge, paad.cnv, paad.me)
