@@ -1,7 +1,7 @@
 ### Data generation for pancreatic cancer dataset for OncoDrive-CIS analysis
 library(reshape2)
 rm(list =ls())
-load("/home/anita/Benchmarking/two_omics/PancreaticCancerCompleteDataAnalysis/PancreaticCancerRawDataset.Rdata")
+load("PancreaticCancerRawDataset.Rdata")
 rm(paad.me)
 
 ## Gene expression
@@ -33,7 +33,7 @@ sample.table <- data.frame(colnames(paad.cnv))
 sample.table$Code <- 1
 sample.table <- sample.table[-1,]
 
-setwd("/home/anita/Benchmarking/two_omics/PancreaticCancerCompleteDataAnalysis/OncodriveCIS/")
+setwd("PancreaticCancer/OncodriveCIS/")
 write.table(ge.table, file= "GeneExp_CompPAAD.tsv", sep = "\t", row.names = F, quote = F)
 write.table(cnv.table, file = "CNV_CompPAAD.tsv", sep = "\t", row.names = F, quote = F)
 write.table(sample.table, file = "SampleInfo_CompPAAD.tsv", sep = "\t", row.names = F, quote = F)
