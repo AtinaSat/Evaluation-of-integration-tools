@@ -114,7 +114,7 @@ PerformanceAnalysis <- function(confusion.mat){
 #' 
 ## ------------------------------------------------------------------------
 # load simulated data case A no noise
-load("/home/anita/Benchmarking/simulated_data/SimulatedCaseA_NN.RData")
+load("../../simulated_data/SimulatedCaseA_NN.RData")
 
 clustersANN <- BCCAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "ANN")
 
