@@ -114,7 +114,7 @@ PerformanceAnalysis <- function(confusion.mat){
 }
 
 ## Large datasets group - Simulated dataset A
-load("/home/n9870130/Benchmark_Integrative_Tools/simulated_data/large_datasets_group/SimulatedCaseA_NN_150Samples.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseA_NN_150Samples.RData")
 mix.ANN <- mixAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "ANN")
 
 truth <- mix.ANN[[1]]
@@ -148,7 +148,7 @@ DataScoresMix[1,3] <- AccuracyANN
 DataScoresMix[1,4] <- resANN[[4]]
 
 ## Large noisy datasets group - Simulated dataset A
-load("/home/n9870130/Benchmark_Integrative_Tools/simulated_data/large_noisy_datasets_group/SimulatedCaseA_WN_150Samples.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseA_WN_150Samples.RData")
 mix.AWN <- mixAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "AWN")
 
 truth <- mix.AWN[[1]]
@@ -173,7 +173,7 @@ DataScoresMix[2,3] <- AccuracyAWN
 DataScoresMix[2,4] <- resAWN[[4]]
 
 ## Large datasets group -Simulated dataset B
-load("/home/n9870130/Benchmark_Integrative_Tools/simulated_data/large_datasets_group/SimulatedCaseB_NN_150Samples.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseB_NN_150Samples.RData")
 mix.BNN <- mixAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "BNN")
 
 truth <- mix.BNN[[1]]
@@ -198,7 +198,7 @@ DataScoresMix[3,3] <- AccuracyBNN
 DataScoresMix[3,4] <- resBNN[[4]]
 
 ## Large noisy datasets group - Simulated dataset B
-load("/home/n9870130/Benchmark_Integrative_Tools/simulated_data/large_noisy_datasets_group/SimulatedCaseB_WN_150Samples.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseB_WN_150Samples.RData")
 mix.BWN <- mixAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "BWN")
 
 truth <- mix.BWN[[1]]
@@ -223,7 +223,7 @@ DataScoresMix[4,3] <- AccuracyBWN
 DataScoresMix[4,4] <- resBWN[[4]]
 
 ## Large datasets group - Simulated dataset C
-load("/home/n9870130/Benchmark_Integrative_Tools/simulated_data/large_datasets_group/SimulatedCaseC_NN_150Samples.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseC_NN_150Samples.RData")
 mix.CNN <- mixAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "CNN")
 
 truth <- mix.CNN[[1]]
@@ -248,7 +248,7 @@ DataScoresMix[5,3] <- AccuracyCNN
 DataScoresMix[5,4] <- resCNN[[4]]
 
 ## Large noisy datasets group - Simulated dataset C
-load("/home/n9870130/Benchmark_Integrative_Tools/simulated_data/large_noisy_datasets_group/SimulatedCaseC_WN_150Samples.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseC_WN_150Samples.RData")
 mix.CWN <- mixAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "CWN")
 
 truth <- mix.CWN[[1]]
@@ -273,7 +273,7 @@ DataScoresMix[6,3] <- AccuracyCWN
 DataScoresMix[6,4] <- resCWN[[4]]
 
 ## Large datasets group - Simulated dataset D
-load("/home/n9870130/Benchmark_Integrative_Tools/simulated_data/large_datasets_group/SimulatedCaseD_NN_150Samples.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseD_NN_150Samples.RData")
 mix.DNN <- mixAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "DNN")
 
 truth <- mix.DNN[[1]]
@@ -298,7 +298,7 @@ DataScoresMix[7,3] <- AccuracyDNN
 DataScoresMix[7,4] <- resDNN[[4]]
 
 ## Large noisy datasets group - Simulated dataset D
-load("/home/n9870130/Benchmark_Integrative_Tools/simulated_data/large_noisy_datasets_group/SimulatedCaseD_WN_150Samples.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseD_WN_150Samples.RData")
 mix.DWN <- mixAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "DWN")
 
 truth <- mix.DWN[[1]]
@@ -322,7 +322,6 @@ DataScoresMix[8,2] <- "D_WN"
 DataScoresMix[8,3] <- AccuracyDWN
 DataScoresMix[8,4] <- resDWN[[4]]
 
-setwd("/home/n9870130/Benchmark_Integrative_Tools/simulated_data/mixOmics_results")
 
 write.table(DataScoresMix, file = "DataScoresMix_150Samples.txt", quote = F, sep = "\t")
 write.table(GroupScoresMix, file = "GroupScoresMix_150Samples.txt", quote = F, sep = "\t")
