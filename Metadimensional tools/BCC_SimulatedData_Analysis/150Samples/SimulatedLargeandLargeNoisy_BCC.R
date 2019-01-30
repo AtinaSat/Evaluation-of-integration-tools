@@ -111,7 +111,7 @@ PerformanceAnalysis <- function(confusion.mat){
 #' 
 ## ------------------------------------------------------------------------
 # load simulated dataset A no noise
-load("/home/anita/Benchmarking/simulated_data/SimulatedCaseA_NN_150Samples.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseA_NN_150Samples.RData")
 
 
 clustersANN <- BCCAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "LANN")
@@ -162,7 +162,7 @@ DataScoresBCC[1,4] <- resANN[[4]]
 #' 
 ## ------------------------------------------------------------------------
 # load simulated dataset A with noise
-load("/home/anita/Benchmarking/simulated_data/SimulatedCaseA_WN_150Samples.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseA_WN_150Samples.RData")
 
 
 clustersAWN <- BCCAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "LAWN")
@@ -203,7 +203,7 @@ DataScoresBCC[2,4] <- resAWN[[4]]
 #' 
 ## ------------------------------------------------------------------------
 # load simulated dataset B no noise
-load("/home/anita/Benchmarking/simulated_data/SimulatedCaseB_NN_150Samples.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseB_NN_150Samples.RData")
 
 
 clustersBNN <- BCCAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "LBNN")
@@ -244,7 +244,7 @@ DataScoresBCC[3,4] <- resBNN[[4]]
 #' 
 ## ------------------------------------------------------------------------
 # load simulated dataset B with noise
-load("/home/anita/Benchmarking/simulated_data/SimulatedCaseB_WN_150Samples.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseB_WN_150Samples.RData")
 
 
 clustersBWN <- BCCAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "LBWN")
@@ -285,7 +285,7 @@ DataScoresBCC[4,4] <- resBWN[[4]]
 #' 
 ## ------------------------------------------------------------------------
 # load simulated dataset C no noise
-load("/home/anita/Benchmarking/simulated_data/SimulatedCaseC_NN_150Samples.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseC_NN_150Samples.RData")
 
 
 clustersCNN <- BCCAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "LCNN")
@@ -326,7 +326,7 @@ DataScoresBCC[5,4] <- resCNN[[4]]
 #' 
 ## ------------------------------------------------------------------------
 # load simulated dataset C with noise
-load("/home/anita/Benchmarking/simulated_data/SimulatedCaseC_WN_150Samples.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseC_WN_150Samples.RData")
 
 
 clustersCWN <- BCCAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "LCWN")
@@ -367,7 +367,7 @@ DataScoresBCC[6,4] <- resCWN[[4]]
 #' 
 ## ------------------------------------------------------------------------
 # load simulated dataset D no noise
-load("/home/anita/Benchmarking/simulated_data/SimulatedCaseD_NN_150Samples.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseD_NN_150Samples.RData")
 
 
 clustersDNN <- BCCAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "LDNN")
@@ -410,7 +410,7 @@ DataScoresBCC[7,4] <- resDNN[[4]]
 #' 
 ## ------------------------------------------------------------------------
 # load simulated dataset D with noise
-load("/home/anita/Benchmarking/simulated_data/SimulatedCaseD_WN_150Samples.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseD_WN_150Samples.RData")
 
 
 clustersDWN <- BCCAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "LDWN")
@@ -484,7 +484,6 @@ p3
 
 #' 
 ## ------------------------------------------------------------------------
-setwd("/home/anita/Benchmarking/simulated_data/BCC_Simulated_Analysis/150Samples/")
 write.table(DataScoresBCC, file = "DataScoresBCC_150Samples.txt", quote = F, sep = "\t")
 write.table(GroupScoresBCC, file = "GroupScoresBCC_150Samples.txt", quote = F, sep = "\t")
 save.image(file = "BCC_Simulated_Analysis_Results_150Samples.RData")
