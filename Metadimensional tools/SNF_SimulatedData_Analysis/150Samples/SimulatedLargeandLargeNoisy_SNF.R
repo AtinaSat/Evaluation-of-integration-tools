@@ -110,7 +110,7 @@ PerformanceAnalysis <- function(confusion.mat){
 #' 
 ## ------------------------------------------------------------------------
 # load simulated dataset A no noise
-load("/home/anita/Benchmarking/simulated_data/SimulatedCaseA_NN_150Samples.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseA_NN_150Samples.RData")
 
 clustersANN <- SNFAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "LANN")
 confusion.mat = table(Truth = clustersANN$Truth, Pred = clustersANN$Predicted)
@@ -158,7 +158,7 @@ DataScoresSNF[1,4] <- resANN[[4]]
 #' 
 ## ------------------------------------------------------------------------
 # load simulated dataset A with noise
-load("/home/anita/Benchmarking/simulated_data/SimulatedCaseA_WN_150Samples.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseA_WN_150Samples.RData")
 
 clustersAWN <- SNFAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "LAWN")
 confusion.mat = table(Truth = clustersAWN$Truth, Pred = clustersAWN$Predicted)
@@ -197,7 +197,7 @@ DataScoresSNF[2,4] <- resAWN[[4]]
 #' 
 ## ------------------------------------------------------------------------
 # load simulated data case B no noise
-load("/home/anita/Benchmarking/simulated_data/SimulatedCaseB_NN_150Samples.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseB_NN_150Samples.RData")
 
 clustersBNN <- SNFAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "LBNN")
 confusion.mat = table(Truth = clustersBNN$Truth, Pred = clustersBNN$Predicted)
@@ -236,7 +236,7 @@ DataScoresSNF[3,4] <- resBNN[[4]]
 #' 
 ## ------------------------------------------------------------------------
 # load simulated data case B with noise
-load("/home/anita/Benchmarking/simulated_data/SimulatedCaseB_WN_150Samples.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseB_WN_150Samples.RData")
 
 clustersBWN <- SNFAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "LBWN")
 confusion.mat = table(Truth = clustersBWN$Truth, Pred = clustersBWN$Predicted)
@@ -275,7 +275,7 @@ DataScoresSNF[4,4] <- resBWN[[4]]
 #' 
 ## ------------------------------------------------------------------------
 # load simulated data case C no noise
-load("/home/anita/Benchmarking/simulated_data/SimulatedCaseC_NN_150Samples.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseC_NN_150Samples.RData")
 
 clustersCNN <- SNFAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "LCNN")
 confusion.mat = table(Truth = clustersCNN$Truth, Pred = clustersCNN$Predicted)
@@ -314,7 +314,7 @@ DataScoresSNF[5,4] <- resCNN[[4]]
 #' 
 ## ------------------------------------------------------------------------
 # load simulated data case C with noise
-load("/home/anita/Benchmarking/simulated_data/SimulatedCaseC_WN_150Samples.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseC_WN_150Samples.RData")
 
 clustersCWN <- SNFAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "LCWN")
 confusion.mat = table(Truth = clustersCWN$Truth, Pred = clustersCWN$Predicted)
@@ -353,7 +353,7 @@ DataScoresSNF[6,4] <- resCWN[[4]]
 #' 
 ## ------------------------------------------------------------------------
 # load simulated data case D no noise
-load("/home/anita/Benchmarking/simulated_data/SimulatedCaseD_NN_150Samples.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseD_NN_150Samples.RData")
 
 clustersDNN <- SNFAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "LDNN")
 confusion.mat = table(Truth = clustersDNN$Truth, Pred = clustersDNN$Predicted)
@@ -392,7 +392,7 @@ DataScoresSNF[7,4] <- resDNN[[4]]
 #' 
 ## ------------------------------------------------------------------------
 # load simulated data case D with noise
-load("/home/anita/Benchmarking/simulated_data/SimulatedCaseD_WN_150Samples.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseD_WN_150Samples.RData")
 
 clustersDWN <- SNFAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "LDWN")
 confusion.mat = table(Truth = clustersDWN$Truth, Pred = clustersDWN$Predicted)
@@ -464,7 +464,6 @@ p3
 
 #' 
 ## ------------------------------------------------------------------------
-setwd("/home/anita/Benchmarking/simulated_data/SNF_Simulated_Analysis/150Samples/")
 write.table(DataScoresSNF, file = "DataScoresSNF_150Samples.txt", quote = F, sep = "\t")
 write.table(GroupScoresSNF, file = "GroupScoresSNF_150Samples.txt", quote = F, sep = "\t")
 save.image(file = "SNF_Simulated_Analysis_Results_150Samples.RData")
