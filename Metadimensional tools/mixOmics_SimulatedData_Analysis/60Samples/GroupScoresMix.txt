@@ -1,0 +1,25 @@
+Tool	Dataset	Group	Precision	Recall	FScore	Data	Noise
+1	mixOmics	A_NN	Group1	0.83	1	0.91	A	NN
+2	mixOmics	A_NN	Group2	1	1	1	A	NN
+3	mixOmics	A_NN	Group3	1	0.75	0.86	A	NN
+4	mixOmics	A_WN	Group1	0.56	1	0.72	A	WN
+5	mixOmics	A_WN	Group2	1	0.5	0.67	A	WN
+6	mixOmics	A_WN	Group3	1	0.75	0.86	A	WN
+7	mixOmics	B_NN	Group1	0.8	0.8	0.8	B	NN
+8	mixOmics	B_NN	Group2	0.83	0.83	0.83	B	NN
+9	mixOmics	B_NN	Group3	1	1	1	B	NN
+10	mixOmics	B_WN	Group1	0.5	0.6	0.55	B	WN
+11	mixOmics	B_WN	Group2	1	0.67	0.8	B	WN
+12	mixOmics	B_WN	Group3	0.6	0.75	0.67	B	WN
+13	mixOmics	C_NN	Group1	0.5	0.4	0.44	C	NN
+14	mixOmics	C_NN	Group2	0.33	0.33	0.33	C	NN
+15	mixOmics	C_NN	Group3	0.6	0.75	0.67	C	NN
+16	mixOmics	C_WN	Group1	0.33	0.4	0.36	C	WN
+17	mixOmics	C_WN	Group2	0.17	0.17	0.17	C	WN
+18	mixOmics	C_WN	Group3	0.33	0.25	0.28	C	WN
+19	mixOmics	D_NN	Group1	0.5	0.6	0.55	D	NN
+20	mixOmics	D_NN	Group2	1	0.67	0.8	D	NN
+21	mixOmics	D_NN	Group3	0.6	0.75	0.67	D	NN
+22	mixOmics	D_WN	Group1	0.5	0.4	0.44	D	WN
+23	mixOmics	D_WN	Group2	0.5	0.33	0.4	D	WN
+24	mixOmics	D_WN	Group3	0.43	0.75	0.55	D	WN

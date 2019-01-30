@@ -1,0 +1,9 @@
+Tool	Dataset	Accuracy	AvgFScore	Data	Noise
+1	mixOmics	A_NN	0.93	0.92	A	NN
+2	mixOmics	A_WN	0.73	0.75	A	WN
+3	mixOmics	B_NN	0.87	0.88	B	NN
+4	mixOmics	B_WN	0.67	0.67	B	WN
+5	mixOmics	C_NN	0.47	0.48	C	NN
+6	mixOmics	C_WN	0.27	0.27	C	WN
+7	mixOmics	D_NN	0.67	0.67	D	NN
+8	mixOmics	D_WN	0.47	0.46	D	WN
