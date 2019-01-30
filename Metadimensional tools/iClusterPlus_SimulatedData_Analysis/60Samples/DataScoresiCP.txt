@@ -1,0 +1,9 @@
+Tool	Dataset	Accuracy	AvgFScore	Data	Noise
+1	iCP	A_NN	1	1	A	NN
+2	iCP	A_WN	1	1	A	WN
+3	iCP	B_NN	0.6	0.55	B	NN
+4	iCP	B_WN	0.65	0.59	B	WN
+5	iCP	C_NN	0.6	0.58	C	NN
+6	iCP	C_WN	0.6	0.58	C	WN
+7	iCP	D_NN	0.6	0.58	D	NN
+8	iCP	D_WN	0.6	0.58	D	WN

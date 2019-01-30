@@ -1,0 +1,25 @@
+Tool	Dataset	Group	Precision	Recall	FScore	Data	Noise
+1	iCP	A_NN	Group1	1	1	1	A	NN
+2	iCP	A_NN	Group2	1	1	1	A	NN
+3	iCP	A_NN	Group3	1	1	1	A	NN
+4	iCP	A_WN	Group1	1	1	1	A	WN
+5	iCP	A_WN	Group2	1	1	1	A	WN
+6	iCP	A_WN	Group3	1	1	1	A	WN
+7	iCP	B_NN	Group1	0.3	0.15	0.2	B	NN
+8	iCP	B_NN	Group2	0.69	1	0.82	B	NN
+9	iCP	B_NN	Group3	0.62	0.65	0.63	B	NN
+10	iCP	B_WN	Group1	0.43	0.15	0.22	B	WN
+11	iCP	B_WN	Group2	0.69	1	0.82	B	WN
+12	iCP	B_WN	Group3	0.67	0.8	0.73	B	WN
+13	iCP	C_NN	Group1	0.69	1	0.82	C	NN
+14	iCP	C_NN	Group2	0.38	0.3	0.34	C	NN
+15	iCP	C_NN	Group3	0.67	0.5	0.57	C	NN
+16	iCP	C_WN	Group1	0.7	0.95	0.81	C	WN
+17	iCP	C_WN	Group2	0.39	0.35	0.37	C	WN
+18	iCP	C_WN	Group3	0.67	0.5	0.57	C	WN
+19	iCP	D_NN	Group1	0.69	1	0.82	D	NN
+20	iCP	D_NN	Group2	0.38	0.3	0.34	D	NN
+21	iCP	D_NN	Group3	0.67	0.5	0.57	D	NN
+22	iCP	D_WN	Group1	0.7	0.95	0.81	D	WN
+23	iCP	D_WN	Group2	0.39	0.35	0.37	D	WN
+24	iCP	D_WN	Group3	0.67	0.5	0.57	D	WN
