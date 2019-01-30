@@ -1,0 +1,113 @@
+#' ---
+#' title: "Hepatocellular Carcinoma BCC - 3 labels"
+#' author: "Anita"
+#' date: "7 September 2018"
+#' output: html_document
+#' ---
+#' 
+## ----setup, include=FALSE------------------------------------------------
+knitr::opts_chunk$set(echo = TRUE)
+
+#' 
+#' BCC works only when further filtering of the data is done.
+#' 
+## ------------------------------------------------------------------------
+library(bayesCC)
+load("/home/anita/Benchmarking/HepatocellularCarcinoma/data/HPC_filtered_data.Rdata")
+
+#' 
+## ------------------------------------------------------------------------
+mrna2 <- t(log(mrna+1))
+me2 <- t(me)
+mirna2 <- t(log(mirna+1))
+X = list(mrna2, me2, mirna2)
+
+#' 
+## ------------------------------------------------------------------------
+lapply(X, dim)
+#Fit model for K=3
+Results = list()
+set.seed(7439285)
+Results[[1]] = BCC(X,K=3)
+K3 = Results[[1]]
+
+Clusters = rep(1,60)
+Clusters[K3$Cbest[,2]==1] = 2
+Clusters[K3$Cbest[,3]==1] = 3
+
+Clusters <- data.frame(Clusters)
+rownames(Clusters) <- data.labels$Samples
+
+#' 
+## ------------------------------------------------------------------------
+rm(list = ls())
+load("/home/anita/Benchmarking/HepatocellularCarcinoma/data/HPC_filtered_data.Rdata")
+
+mrna2 <- t(log(mrna+1))
+rowmed <- apply(mrna2,1,median)
+mrna3 <- mrna2-rowmed
+mrna4 <- mrna3[apply(mrna3,1,sd)>1.5,]
+rownames(mrna4) <- NULL
+
+me2 <- t(me)
+
+mirna2 <- t(log(mirna+1))
+
+mirna3 = mirna2[rowSums(mirna2==0) < 60*0.25,]
+rownames(mirna3) <- NULL
+
+X = list(mrna4, me2, mirna3)
+
+lapply(X, dim)
+#Fit model for K=3
+Results = list()
+set.seed(3566)
+tic("BCC HPC3Labels")
+Results[[1]] = bayesCC(X,K=3)
+toc()
+K3 = Results[[1]]
+
+#' 
+## ------------------------------------------------------------------------
+Clusters = rep(1,60)
+Clusters[K3$Cbest[,2]==1] = 2
+Clusters[K3$Cbest[,3]==1] = 3
+Clusters <- data.frame(Clusters)
+rownames(Clusters) <- data.labels$Samples
+
+Clusters$Truth <- data.labels$Samples
+Clusters$Truth <- gsub("N.{1,4}", "2", Clusters$Truth)
+Clusters$Truth <- gsub("T.{1,4}", "3", Clusters$Truth)
+Clusters$Truth <- gsub("P.{1,4}", "1", Clusters$Truth)
+
+confusion.mat <- table(Truth = Clusters$Truth, Pred = Clusters$Clusters)
+confusion.mat
+
+#' 
+## ------------------------------------------------------------------------
+BCC_Accuracy = sum(Clusters$Truth == Clusters$Clusters)/length(Clusters$Clusters)
+round(BCC_Accuracy,4)
+
+
+# PVTT Samples (Cluster 1)
+Pg1 <- round(confusion.mat[1,1]/sum(confusion.mat[,1]),2) # Precision
+Rg1 <- round(confusion.mat[1,1]/sum(confusion.mat[1,]),2) # Recall
+Fg1 <- round(2*((Pg1*Rg1)/(Pg1+Rg1)),2) # F1-score
+Fg1[is.nan(Fg1)] <- 0
+  
+# Normal (Cluster 2)
+Pg2 <- round(confusion.mat[2,2]/sum(confusion.mat[,2]),2) # Precision
+Rg2 <- round(confusion.mat[2,2]/sum(confusion.mat[2,]),2) # Recall
+Fg2 <- round(2*((Pg2*Rg2)/(Pg2+Rg2)),2) # F1-score
+Fg2[is.nan(Fg2)] <- 0
+
+# Tumour samples (Cluster 3)
+Pg3 <- round(confusion.mat[3,3]/sum(confusion.mat[,3]),2) # Precision
+Rg3 <- round(confusion.mat[3,3]/sum(confusion.mat[3,]),2) # Recall
+Fg3 <- round(2*((Pg3*Rg3)/(Pg3+Rg3)),2) # F1-score
+Fg3[is.nan(Fg3)] <- 0
+  
+AvgF <- round((Fg1+Fg2+Fg3)/3,2)
+  
+save.image(file = "HPC_BCC_Results_3labels.RData")
+
