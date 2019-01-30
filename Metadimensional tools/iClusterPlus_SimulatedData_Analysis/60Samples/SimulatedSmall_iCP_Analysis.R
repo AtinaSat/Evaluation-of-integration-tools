@@ -44,25 +44,23 @@ iCPAnalysis <- function(geSimulated, mirnaSimulated, methSimulated, sample_label
 } 
 
 
-setwd("/home/n9870130/Benchmark_Integrative_Tools/simulated_data/small_datasets_group/IClusterPlus_Analysis")
-
 # load simulated small dataset A 
-load("/home/n9870130/Benchmark_Integrative_Tools/simulated_data/small_datasets_group/SimulatedCaseA_NN.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseA_NN.RData")
 clustersANN <- iCPAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "ANN")
 
 
 # load simulated small dataset B
-load("/home/n9870130/Benchmark_Integrative_Tools/simulated_data/small_datasets_group/SimulatedCaseB_NN.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseB_NN.RData")
 clustersBNN <- iCPAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "BNN")
 
 
 # load simulated small dataset C
-load("/home/n9870130/Benchmark_Integrative_Tools/simulated_data/small_datasets_group/SimulatedCaseC_NN.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseC_NN.RData")
 clustersCNN <- iCPAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "CNN")
 
 
 # load simulated small dataset D
-load("/home/n9870130/Benchmark_Integrative_Tools/simulated_data/small_datasets_group/SimulatedCaseD_NN.RData")
+load("../../simulated_data/simulatedDatasets/SimulatedCaseD_NN.RData")
 clustersDNN <- iCPAnalysis(geSimulated, mirnaSimulated, methSimulated, sample_labels, "DNN")
 
 
