@@ -3,7 +3,7 @@ rm(list = ls())
 library(mixOmics)
 library(tictoc)
 
-load("/home/n9870130/Benchmark_Integrative_Tools/HepatocellularCarcinoma/HPC_filtered_data.Rdata")
+load("../HPC_filtered_data.Rdata")
 
 # Log tranforming the data as they are in counts
 mirna2 <- log(mirna+1)
