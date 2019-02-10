@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## ------------------------------------------------------------------------
 library(SNFtool)
 library(tictoc)
-load("/home/anita/Benchmarking/HepatocellularCarcinoma/data/HPC_filtered_data.Rdata")
+load("../HPC_filtered_data.Rdata")
 mirna2 <- log(mirna+1)
 mrna2 <- log(mrna+1)
 
