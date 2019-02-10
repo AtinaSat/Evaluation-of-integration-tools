@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 #' 
 ## ------------------------------------------------------------------------
 library(bayesCC)
-load("/home/anita/Benchmarking/HepatocellularCarcinoma/data/HPC_filtered_data.Rdata")
+load("../HPC_filtered_data.Rdata")
 
 #' 
 ## ------------------------------------------------------------------------
