@@ -2,7 +2,7 @@
 ## Omics data has been initially downloaded
 ## Reading miRNA data
 rm(list = ls())
-setwd("/home/anita/Benchmarking/HepatocellularCarcinoma/data/GSE76903_RAW_miRNA/")
+setwd("../GSE76903_RAW_miRNA/")
 file_list <- list.files()
 dat.tmp <- do.call("cbind",lapply(file_list, FUN=function(files){read.table(gzfile(files),header=FALSE, sep="\t")}))
 dat.tmp <- dat.tmp[-1,]
@@ -93,5 +93,4 @@ dim(me)
 data.labels <- read.table("SamplesAndLabels.txt", header = T, sep ="\t")
 
 # Saving the data for future use
-setwd("/home/anita/Integrated analysis in R/HepatocellularCarcinoma/MixOmicsAnalysis/Analysis3/")
 save(me,mirna,mrna, data.labels, file = "HPC_filtered_data.Rdata")
