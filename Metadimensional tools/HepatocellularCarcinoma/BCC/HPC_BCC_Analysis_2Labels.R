@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## ------------------------------------------------------------------------
 library(bayesCC)
 library(tictoc)
-load("../../HPC_filtered_data.Rdata")
+load("../HPC_filtered_data.Rdata")
 
 #' 
 ## ------------------------------------------------------------------------
