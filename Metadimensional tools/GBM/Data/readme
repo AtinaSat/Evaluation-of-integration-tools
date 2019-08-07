@@ -1,1 +1,13 @@
 
+The TCGA files are avilable at
+
+Protein data:
+Protein data is downloaded from https://tcga.xenahubs.net/download/TCGA.GBM.sampleMap/RPPA_RBN.gz
+These data have been normalized by RBN (replicate-base normalization) method developed by MDACC
+
+mRNA array data :
+mRNA data is downloaded from https://tcga.xenahubs.net/download/TCGA.GBM.sampleMap/HT_HG-U133A.gz
+
+Methylation 27k data:
+Methylation data is downloaded from https://tcga.xenahubs.net/download/TCGA.GBM.sampleMap/HumanMethylation27.gz
+DNA methylation beta values are continuous variables between 0 and 1, representing the ratio of the intensity of the methylated bead type to the combined locus intensity
