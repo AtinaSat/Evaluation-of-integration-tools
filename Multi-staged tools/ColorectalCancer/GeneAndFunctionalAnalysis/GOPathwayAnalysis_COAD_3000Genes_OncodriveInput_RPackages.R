@@ -1,12 +1,13 @@
 # Venns for Genes, Gene Ontology BP, CC, MF (using clusterProfiler) and Pathway (using Reactome DB) - Colon cancer datsaet
 # The GO terms were identified using enrichGO from clusterProfiler
-# The reactome pathways were identified using submitting the significant 3000 genes from each tool in Reactome pathway database
+# The reactome pathways were identified using ReactomePA for the top 3000 significant genes 
 # date: 25/06/2019
 
 rm(list = ls())  
 
 library(venn)
 library(clusterProfiler)
+library(ReactomePA)
 source("/home/anita/Benchmarking/two_omics/HUGOtoEntrezIDsFunction.R")
 
 ## cBioPortal cancer genes list (CCGL)
